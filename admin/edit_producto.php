@@ -5,7 +5,18 @@
 	$categoria = new Categoria();
 	$categorias = $categoria->seleccion();
 
-	if (isset($_POST['btnGuardar'])){
+	if (isset($_GET['id'])){
+
+		$producto = new Producto();
+		$row = $producto->seleccionar($_GET['id'])->fetch(PDO::FETCH_ASSOC);
+		
+		if (isset($_GET['acc']){
+			$accion = $_GET['acc'];
+			if ($accion == 1){
+				//Modificación
+			}
+		}
+	} elseif (isset($_POST['btnGuardar'])){
 		$producto = new Producto();
 
 		$img = $_FILES['imagen']['name'];
